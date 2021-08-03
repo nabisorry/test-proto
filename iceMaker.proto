@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package iceMaker;
+
+service IceMaker {
+    rpc dischargeIce (dischargeIceRequest) returns (stream dischargeIceResponse) {} 
+}
+
+message empty {}
+
+message dischargeIceRequest {
+    int32 amount = 1;
+}
+
+message dischargeIceResponse {
+    int32 message = 1;
+} 
