@@ -1,3 +1,3 @@
-import { PIIServer } from 'src';
+import PIIServer = require('../index');
 
 export = PIIServer;
