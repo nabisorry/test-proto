@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package jobs;
+
+message ClinentMessage {
+  string message = 1;
+}
+
+message ServerMessage {
+  string message = 1;
+}
+
+service GrpcStream {
+  // 양방향 스트림 
+  rpc stream (stream ClinentMessage) returns (stream ServerMessage){}; 
+}

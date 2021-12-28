@@ -1,8 +1,32 @@
 {
-  "name": "proto",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/PLANZ-COFFEE/proto.git",
-  "author": "PLANZ-COFFEE",
-  "license": "MIT"
+    "name": "planz-proto",
+    "version": "1.0.0",
+    "repository": "https://github.com/PLANZ-COFFEE/proto.git",
+    "author": "PLANZ-COFFEE",
+    "license": "MIT",
+    "dependencies": {
+        "@grpc/grpc-js": "^1.4.5",
+        "@types/inquirer": "^6.5.0",
+        "@types/lowdb": "^1.0.9",
+        "@types/yargs": "^15.0.3",
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "cli-table": "^0.3.1",
+        "eslint": "^6.8.0",
+        "grpc-tools": "1.10.0",
+        "grpc_tools_node_protoc_ts": "5.0.1",
+        "inquirer": "^7.0.4",
+        "lodash": "^4.17.15",
+        "lowdb": "^1.0.0",
+        "tsc": "^2.0.3",
+        "typescript": "^4.5.4",
+        "yargs": "^15.1.0"
+    },
+    "scripts": {
+        "lint": "yarn run eslint --fix --ext .ts src",
+        "prebuild": "yarn run lint",
+        "clean": "rm -rf ./src/proto && mkdir -p ./src/proto && rm -f chat-*.txt && rm -f db.json",
+        "build": "sh ./scripts/build-protos.sh ./pii.proto ./src/proto && yarn run tsc",
+        "start": "PORT=6789 node ./dist/index.js"
+    }
 }
