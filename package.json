@@ -4,6 +4,7 @@
     "repository": "https://github.com/PLANZ-COFFEE/proto.git",
     "author": "PLANZ-COFFEE",
     "license": "MIT",
+    "main": "./dist/index.js",
     "types": "./src/types",
     "dependencies": {
         "@grpc/grpc-js": "^1.4.5",
