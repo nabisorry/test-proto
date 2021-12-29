@@ -90,7 +90,8 @@ proto.jobs.ClientMessage.prototype.toObject = function(opt_includeInstance) {
  */
 proto.jobs.ClientMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, "")
+    ssid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    message: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -129,6 +130,10 @@ proto.jobs.ClientMessage.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setSsid(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
       break;
     default:
@@ -160,10 +165,17 @@ proto.jobs.ClientMessage.prototype.serializeBinary = function() {
  */
 proto.jobs.ClientMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMessage();
+  f = message.getSsid();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -171,10 +183,10 @@ proto.jobs.ClientMessage.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string message = 1;
+ * optional string ssid = 1;
  * @return {string}
  */
-proto.jobs.ClientMessage.prototype.getMessage = function() {
+proto.jobs.ClientMessage.prototype.getSsid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -183,8 +195,26 @@ proto.jobs.ClientMessage.prototype.getMessage = function() {
  * @param {string} value
  * @return {!proto.jobs.ClientMessage} returns this
  */
-proto.jobs.ClientMessage.prototype.setMessage = function(value) {
+proto.jobs.ClientMessage.prototype.setSsid = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string message = 2;
+ * @return {string}
+ */
+proto.jobs.ClientMessage.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.jobs.ClientMessage} returns this
+ */
+proto.jobs.ClientMessage.prototype.setMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -220,7 +250,8 @@ proto.jobs.ServerMessage.prototype.toObject = function(opt_includeInstance) {
  */
 proto.jobs.ServerMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    message: jspb.Message.getFieldWithDefault(msg, 1, "")
+    ssid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    message: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -259,6 +290,10 @@ proto.jobs.ServerMessage.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setSsid(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
       break;
     default:
@@ -290,10 +325,17 @@ proto.jobs.ServerMessage.prototype.serializeBinary = function() {
  */
 proto.jobs.ServerMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMessage();
+  f = message.getSsid();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -301,10 +343,10 @@ proto.jobs.ServerMessage.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string message = 1;
+ * optional string ssid = 1;
  * @return {string}
  */
-proto.jobs.ServerMessage.prototype.getMessage = function() {
+proto.jobs.ServerMessage.prototype.getSsid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -313,8 +355,26 @@ proto.jobs.ServerMessage.prototype.getMessage = function() {
  * @param {string} value
  * @return {!proto.jobs.ServerMessage} returns this
  */
-proto.jobs.ServerMessage.prototype.setMessage = function(value) {
+proto.jobs.ServerMessage.prototype.setSsid = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string message = 2;
+ * @return {string}
+ */
+proto.jobs.ServerMessage.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.jobs.ServerMessage} returns this
+ */
+proto.jobs.ServerMessage.prototype.setMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

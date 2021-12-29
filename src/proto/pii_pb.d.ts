@@ -7,6 +7,9 @@
 import * as jspb from "google-protobuf";
 
 export class ClientMessage extends jspb.Message { 
+    getSsid(): string;
+    setSsid(value: string): ClientMessage;
+
     getMessage(): string;
     setMessage(value: string): ClientMessage;
 
@@ -23,11 +26,15 @@ export class ClientMessage extends jspb.Message {
 
 export namespace ClientMessage {
     export type AsObject = {
+        ssid: string,
         message: string,
     }
 }
 
 export class ServerMessage extends jspb.Message { 
+    getSsid(): string;
+    setSsid(value: string): ServerMessage;
+
     getMessage(): string;
     setMessage(value: string): ServerMessage;
 
@@ -44,6 +51,7 @@ export class ServerMessage extends jspb.Message {
 
 export namespace ServerMessage {
     export type AsObject = {
+        ssid: string,
         message: string,
     }
 }

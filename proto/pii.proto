@@ -3,11 +3,13 @@ syntax = "proto3";
 package jobs;
 
 message ClientMessage {
-  string message = 1;
+  string ssid = 1;
+  string message = 2;
 }
 
 message ServerMessage {
-  string message = 1;
+  string ssid = 1;
+  string message = 2;
 }
 
 service GrpcStream {
