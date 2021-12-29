@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package jobs;
 
-message ClinentMessage {
+message ClientMessage {
   string message = 1;
 }
 
@@ -12,5 +12,5 @@ message ServerMessage {
 
 service GrpcStream {
   // 양방향 스트림 
-  rpc stream (stream ClinentMessage) returns (stream ServerMessage){}; 
+  rpc stream (stream ClientMessage) returns (stream ServerMessage){};
 }

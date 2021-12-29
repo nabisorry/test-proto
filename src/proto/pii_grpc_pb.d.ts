@@ -12,12 +12,12 @@ interface IGrpcStreamService extends grpc.ServiceDefinition<grpc.UntypedServiceI
     stream: IGrpcStreamService_Istream;
 }
 
-interface IGrpcStreamService_Istream extends grpc.MethodDefinition<pii_pb.ClinentMessage, pii_pb.ServerMessage> {
+interface IGrpcStreamService_Istream extends grpc.MethodDefinition<pii_pb.ClientMessage, pii_pb.ServerMessage> {
     path: "/jobs.GrpcStream/stream";
     requestStream: true;
     responseStream: true;
-    requestSerialize: grpc.serialize<pii_pb.ClinentMessage>;
-    requestDeserialize: grpc.deserialize<pii_pb.ClinentMessage>;
+    requestSerialize: grpc.serialize<pii_pb.ClientMessage>;
+    requestDeserialize: grpc.deserialize<pii_pb.ClientMessage>;
     responseSerialize: grpc.serialize<pii_pb.ServerMessage>;
     responseDeserialize: grpc.deserialize<pii_pb.ServerMessage>;
 }
@@ -25,17 +25,17 @@ interface IGrpcStreamService_Istream extends grpc.MethodDefinition<pii_pb.Clinen
 export const GrpcStreamService: IGrpcStreamService;
 
 export interface IGrpcStreamServer {
-    stream: grpc.handleBidiStreamingCall<pii_pb.ClinentMessage, pii_pb.ServerMessage>;
+    stream: grpc.handleBidiStreamingCall<pii_pb.ClientMessage, pii_pb.ServerMessage>;
 }
 
 export interface IGrpcStreamClient {
-    stream(): grpc.ClientDuplexStream<pii_pb.ClinentMessage, pii_pb.ServerMessage>;
-    stream(options: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClinentMessage, pii_pb.ServerMessage>;
-    stream(metadata: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClinentMessage, pii_pb.ServerMessage>;
+    stream(): grpc.ClientDuplexStream<pii_pb.ClientMessage, pii_pb.ServerMessage>;
+    stream(options: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClientMessage, pii_pb.ServerMessage>;
+    stream(metadata: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClientMessage, pii_pb.ServerMessage>;
 }
 
 export class GrpcStreamClient extends grpc.Client implements IGrpcStreamClient {
     constructor(address: string, credentials: grpc.ChannelCredentials, options?: Partial<grpc.ClientOptions>);
-    public stream(options?: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClinentMessage, pii_pb.ServerMessage>;
-    public stream(metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClinentMessage, pii_pb.ServerMessage>;
+    public stream(options?: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClientMessage, pii_pb.ServerMessage>;
+    public stream(metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientDuplexStream<pii_pb.ClientMessage, pii_pb.ServerMessage>;
 }

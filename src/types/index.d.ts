@@ -6,5 +6,5 @@ import * as I from '../index';
 export declare const GrpcStreamService: P.IGrpcStreamService;
 export declare class PIIServer extends I.PIIServer {}
 export declare class GrpcStreamClient extends P.GrpcStreamClient {}
-export declare class ClinentMessage extends B.ClinentMessage {}
+export declare class ClinentMessage extends B.ClientMessage {}
 export declare class ServerMessage extends B.ServerMessage {}
