@@ -2,7 +2,8 @@ syntax = "proto3";
 
 package jobs;
 
-message ClientMessage {
+// 메시지 정의
+message ClientMessage { 
   string ssid = 1;
   string message = 2;
 }
@@ -12,6 +13,7 @@ message ServerMessage {
   string message = 2;
 }
 
+// service 정의 
 service GrpcStream {
   // 양방향 스트림 
   rpc stream (stream ClientMessage) returns (stream ServerMessage){};
