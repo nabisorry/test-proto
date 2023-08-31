@@ -1,7 +1,6 @@
 {
-    "name": "planz-proto",
+    "name": "test-proto",
     "version": "1.0.0",
-    "repository": "https://github.com/PLANZ-COFFEE/proto.git",
     "author": "PLANZ-COFFEE",
     "license": "MIT",
     "main": "./dist/index.js",
